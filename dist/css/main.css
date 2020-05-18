@@ -312,15 +312,15 @@ template {
   0% {
     width: 1%; }
   100% {
-    -webkit-transform: scaleX(90);
-            transform: scaleX(90); } }
+    -webkit-transform: scaleX(100);
+            transform: scaleX(100); } }
 
 @keyframes anim {
   0% {
     width: 1%; }
   100% {
-    -webkit-transform: scaleX(90);
-            transform: scaleX(90); } }
+    -webkit-transform: scaleX(100);
+            transform: scaleX(100); } }
 
 html {
   -webkit-box-sizing: border-box;
