@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400&display=swap&subset=latin-ext");
 html {
   line-height: 1.15;
   /* 1 */
@@ -307,16 +308,103 @@ template {
 [hidden] {
   display: none; }
 
+@-webkit-keyframes anim {
+  0% {
+    width: 1%; }
+  100% {
+    -webkit-transform: scaleX(100);
+            transform: scaleX(100); } }
+
+@keyframes anim {
+  0% {
+    width: 1%; }
+  100% {
+    -webkit-transform: scaleX(100);
+            transform: scaleX(100); } }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
 body {
-  color: #F9C802;
-  background: #000; }
+  background-image: url("/assets/img/background.png");
+  background-size: cover;
+  font-family: Montserrat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh; }
+
+.editor {
+  background: rgba(203, 203, 216, 0.5);
+  border: 1px solid white;
+  border-radius: 16px;
+  min-width: 350px;
+  padding: 16px; }
+  .editor__header {
+    color: white;
+    font-weight: 100;
+    font-size: 44px;
+    text-align: center; }
+  .editor__message {
+    background: rgba(203, 203, 216, 0.5);
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid white; }
+  .editor__action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    border-radius: 4px; }
+  .editor__button {
+    border: 1px solid #fff;
+    height: 27px;
+    color: #ffffff;
+    margin: 10px;
+    width: 96px;
+    padding: 10px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+    .editor__button:hover {
+      background: #ffffff;
+      color: #000;
+      cursor: pointer;
+      -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+              transform: scale(0.9); }
+    .editor__button--load {
+      background: #12123257; }
+    .editor__button--save {
+      background: rgba(27, 26, 83, 0.5); }
+  .editor__animation {
+    display: block;
+    background: white;
+    height: 1px;
+    width: 1%;
+    left: 50%;
+    position: relative;
+    top: -20px;
+    -webkit-animation: anim 1s ease-in-out 0.3s forwards;
+            animation: anim 1s ease-in-out 0.3s forwards; }
 
 /*# sourceMappingURL=main.css.map */
