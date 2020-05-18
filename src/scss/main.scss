@@ -1,16 +1,114 @@
 @import "_normalize";
 @import "_variables";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,400&display=swap&subset=latin-ext");
 
+// @keyframes anim {
+//   0% {
+//     background: #ffffff;
+//     width: 10%;
+//   }
+
+//   100% {
+//     background: #b3b3b9;
+//     width: 100%;
+//   }
+// }
+
+@keyframes anim {
+  0% {
+    width: 1%;
+  }
+
+  100% {
+    transform: scaleX(90);
+  }
+}
 
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+  background-image: url("/assets/img/background.png");
+  background-size: cover;
+  font-family: Montserrat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.editor {
+  background: $background;
+  border: 1px solid white;
+  border-radius: 16px;
+  min-width: 350px;
+  padding: 16px;
+
+  &__header {
+    color: white;
+    font-weight: 100;
+    font-size: 44px;
+    text-align: center;
+  }
+
+  &__message {
+    background: $background;
+    min-width: 250px;
+    padding: 10px;
+    //margin: 0 auto;
+    border: 1px solid white;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 4px;
+  }
+
+  &__button {
+    border: 1px solid #fff;
+    height: 27px;
+    color: #ffffff;
+    margin: 10px;
+    width: 96px;
+    padding: 10px;
+    box-sizing: content-box;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      background: #ffffff;
+      color: #000;
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+
+    &--load {
+      background: #12123257;
+    }
+
+    &--save {
+      background: rgba(27, 26, 83, 0.5);
+    }
+  }
+
+  &__animation {
+    display: block;
+    background: white;
+    height: 1px;
+    width: 1%;
+    left: 50%;
+    position: relative;
+    top: -20px;
+
+    animation: anim 1s ease-in-out 0.3s forwards;
+
+    //animation: slidein 50s linear infinite;
+  }
 }
